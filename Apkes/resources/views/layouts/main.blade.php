@@ -35,12 +35,7 @@
       <!-- Control sidebar content goes here -->
     </aside>
     <!-- /.control-sidebar -->
-
-<<<<<<< HEAD
-
-=======
   <!-- {{-- Semua JS dipanggil di sini --}} -->
   @include('partials.js')
->>>>>>> fitur2
 </body>
 </html>
