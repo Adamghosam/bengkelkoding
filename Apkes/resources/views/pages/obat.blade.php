@@ -16,7 +16,7 @@
             </ol>
           </div>
         </div>
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
 
     <!-- Main content -->
@@ -26,7 +26,7 @@
         <!-- SELECT2 EXAMPLE -->
         <div class="card card-default">
           <div class="card-header">
-            <h3 class="card-title">Select2 (Bootstrap4 Theme)</h3>
+            <h3 class="card-title"> Tambah Data Obat</h3>
 
             <div class="card-tools">
               <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -42,12 +42,12 @@
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <label>Minimal</label>
+        <label>Nama Obat</label>
         <input type="text" class="form-control" placeholder="Masukkan nilai minimal">
       </div>
       <!-- /.form-group -->
       <div class="form-group">
-        <label>Disabled</label>
+        <label>Kemasan </label>
         <input type="text" class="form-control" placeholder="Input nonaktif">
       </div>
       <!-- /.form-group -->
@@ -55,7 +55,7 @@
     <!-- /.col -->
     <div class="col-md-6">
       <div class="form-group">
-        <label>Multiple</label>
+        <label>Harga</label>
         <input type="text" class="form-control" placeholder="Masukkan beberapa nilai (pisahkan dengan koma)">
       </div>
       <!-- /.form-group -->
