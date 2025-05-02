@@ -59,10 +59,17 @@
         <input type="text" class="form-control" placeholder="Masukkan beberapa nilai (pisahkan dengan koma)">
       </div>
       <!-- /.form-group -->
+<<<<<<< HEAD
       <!-- <div class="form-group">
         <label>Disabled Result</label>
         <input type="text" class="form-control" placeholder="Sebagian hasil tidak tersedia">
       </div> -->
+=======
+      <div class="form-group">
+        <label>Disabled Result</label>
+        <input type="text" class="form-control" placeholder="Sebagian hasil tidak tersedia">
+      </div>
+>>>>>>> 4e0e562e1af729b6ac9c63ddec7ab9e44ade862e
       <!-- /.form-group -->
     </div>
     <!-- /.col -->
