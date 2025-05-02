@@ -200,5 +200,57 @@
   }
 </script>
 
+<!-- rupiah script -->
+<script>
+    const hargaInput = document.getElementById('harga');
+
+    // Fungsi untuk format harga menjadi format Rupiah
+    hargaInput.addEventListener('input', function (e) {
+        let value = e.target.value;
+
+        // Menghapus semua selain angka dan titik
+        value = value.replace(/[^0-9]/g, "");
+
+        // Format ke Rupiah dengan menambahkan titik setiap 3 angka
+        const formattedValue = value.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+        // Update value di input
+        e.target.value = formattedValue;
+    });
+
+    // Saat form disubmit, kita akan menghapus format Rupiah dan hanya mengirim angka
+    document.getElementById('obatForm').addEventListener('submit', function (e) {
+        let harga = hargaInput.value;
+
+        // Menghapus titik (pemisah ribuan) dan "Rp" jika ada
+        harga = harga.replace(/\./g, '');
+
+        // Update nilai harga dengan angka murni sebelum dikirim ke backend
+        hargaInput.value = harga;
+    });
+</script>
+
+  <script>
+    setTimeout(function() {
+      // Menghapus alert setelah 3 detik
+      const alertSuccess = document.querySelector('.alert-success');
+      if (alertSuccess) {
+        alertSuccess.style.display = 'none';
+      }
+    }, 3000); // 3000 ms = 3 detik
+  </script>
+
+<script>
+    $(document).ready(function() {
+        $('.select2bs4').select2({
+            theme: 'bootstrap4' // Jika Anda menggunakan Bootstrap 4
+        });
+    });
+</script>
+
+
+
+<!-- ./ rupiah script -->
+
 <!-- Tambahan JS per halaman -->
 @stack('custom-js')

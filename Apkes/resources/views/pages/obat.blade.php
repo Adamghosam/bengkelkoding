@@ -4,91 +4,91 @@
 
 @section('content')
 <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Advanced Form</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Advanced Form</li>
-            </ol>
-          </div>
-        </div>
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1>Tambah Data Obat</h1>
       </div>
-    </section>
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active">Form Obat</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        
-        <!-- SELECT2 EXAMPLE -->
-        <div class="card card-default">
-          <div class="card-header">
-            <h3 class="card-title"> Tambah Data Obat</h3>
+<section class="content">
+  <div class="container-fluid">
+    <div class="card card-default">
+      <div class="card-header">
+        <h3 class="card-title font-weight-bold">Form Tambah Obat</h3>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse">
+            <i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+<!-- Alert Success -->
+@if(session('success'))
+        <div class="alert alert-success" role="alert">      
+          {{ session('success') }}
+        </div>
+@endif
+      <!--  -->
 
-            <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                <i class="fas fa-minus"></i>
-              </button>
-              <button type="button" class="btn btn-tool" data-card-widget="remove">
-                <i class="fas fa-times"></i>
-              </button>
+
+      </div>
+
+
+      <form action="{{ route('obat.store') }}" method="POST" id="obatForm">
+      
+        @csrf
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Nama Obat</label>
+                <input type="text" name="nama_obat" class="form-control" placeholder="Masukkan nama obat" required autocomplete="off">
+              </div>
+
+              <div class="form-group">
+    <label>Kemasan</label>
+    <select name="kemasan" class="form-control select2bs4" style="width: 100%;"> <!-- Pastikan ada atribut name -->
+        <option value="" selected disabled>Pilih Kemasan</option> <!-- Placeholder jika belum dipilih -->
+        @foreach($jeniskemasan as $k)
+            <option value="{{ $k }}">{{ $k }}</option>
+        @endforeach
+    </select>
+</div>
+
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Harga</label>
+                <input type="text" name="harga"  id="harga" class="form-control" placeholder="Masukkan harga" required autocomplete="off">
+              </div>
             </div>
           </div>
-          <!-- /.card-header -->
-          <div class="card-body">
-  <div class="row">
-    <div class="col-md-6">
-      <div class="form-group">
-        <label>Nama Obat</label>
-        <input type="text" class="form-control" placeholder="Masukkan nilai minimal">
-      </div>
-      <!-- /.form-group -->
-      <div class="form-group">
-        <label>Kemasan </label>
-        <input type="text" class="form-control" placeholder="Input nonaktif">
-      </div>
-      <!-- /.form-group -->
+
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Simpan Data
+          </button>
+        </div>
+      </form>
     </div>
-    <!-- /.col -->
-    <div class="col-md-6">
-      <div class="form-group">
-        <label>Harga</label>
-        <input type="text" class="form-control" placeholder="Masukkan beberapa nilai (pisahkan dengan koma)">
-      </div>
-      <!-- /.form-group -->
-<<<<<<< HEAD
-      <!-- <div class="form-group">
-        <label>Disabled Result</label>
-        <input type="text" class="form-control" placeholder="Sebagian hasil tidak tersedia">
-      </div> -->
-=======
-      <div class="form-group">
-        <label>Disabled Result</label>
-        <input type="text" class="form-control" placeholder="Sebagian hasil tidak tersedia">
-      </div>
->>>>>>> 4e0e562e1af729b6ac9c63ddec7ab9e44ade862e
-      <!-- /.form-group -->
-    </div>
-    <!-- /.col -->
-  </div>
-  <!-- /.row -->
-             <!-- Tombol Primary -->
-<button type="button" class="btn btn-primary">
-  <i class="fas fa-plus"></i> Tambah Data
-</button>
-</div>
- <!-- /.card-body -->          
-     </div>
-        <!-- /.card -->
+
+
 
         <div class="row">
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Responsive Hover Table</h3>
+                <h3 class="card-title font-weight-bold">Daftar List Obat</h3>
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
@@ -107,48 +107,28 @@
                 <table class="table table-hover text-nowrap">
                   <thead>
                     <tr>
-                      <th>ID</th>
-                      <th>User</th>
-                      <th>Date</th>
-                      <th>Status</th>
+                      <th>NO</th>
+                      <th>Nama</th>
+                      <th>Kemasan</th>
+                      <th>Harga</th>
                       <th>Reason</th>
                     </tr>
                   </thead>
                   <tbody>
+                  @foreach($obats as $obat)
+             
                     <tr>
-                      <td>183</td>
-                      <td>John Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-success">Approved</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                      <td>{{ $loop->iteration }}</td>
+                      <td>{{ $obat->nama_obat }}</td>
+                      <td>{{ $obat->kemasan }}</td>
+                      <td>{{ 'Rp. ' . number_format($obat->harga, 0, ',', '.') }}</td>
+                      <td>{{ $obat->created_at }}</td>    
                     </tr>
-                    <tr>
-                      <td>219</td>
-                      <td>Alexander Pierce</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-warning">Pending</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>657</td>
-                      <td>Bob Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-primary">Approved</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>175</td>
-                      <td>Mike Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-danger">Denied</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div>
-   
-        
-          </div>
+    
         </div>
         <!-- /.row -->
       </div>
