@@ -3,6 +3,7 @@
 
 <!-- Font Awesome -->
 <link rel="stylesheet" href="{{ asset('adminlte/plugins/fontawesome-free/css/all.min.css') }}">
+
 <!-- Ionicons -->
 <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 <!-- Tempusdominus Bootstrap 4 -->
@@ -13,6 +14,7 @@
 <link rel="stylesheet" href="{{ asset('adminlte/plugins/jqvmap/jqvmap.min.css') }}">
 <!-- AdminLTE Theme -->
 <link rel="stylesheet" href="{{ asset('adminlte/dist/css/adminlte.min.css') }}">
+<link rel="stylesheet" href="{{ asset('adminlte/dist/css/custome.css') }}">
 <!-- overlayScrollbars -->
 <link rel="stylesheet" href="{{ asset('adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
 <!-- Daterangepicker -->
