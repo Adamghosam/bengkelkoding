@@ -41,102 +41,36 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+            <a href="/lists-dokter" class="nav-link">
+              <!-- <i class="nav-icon fas fa-tachometer-alt"></i> -->
+              <i class="nav-icon fa-solid fa-user-doctor"></i>
               <p>
                 DOKTER
-                <i class="right fas fa-angle-left"></i>
+                
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="/lists-dokter" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dokter Umum</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../../index2.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dokter Gigi</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../../index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dokter Kandungan</p>
-                </a>
-              </li>
-            </ul>
           </li>
           <li class="nav-item">
             <a href="/obat" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <!-- <i class="nav-icon fas fa-th"></i> -->
+              <i class="nav-icon fa-solid fa-capsules"></i>
               <p>
                 OBAT
-                <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+            <a href="/periksa" class="nav-link">
+              <!-- <i class="nav-icon fas fa-copy"></i> -->
+              <i class="nav-icon fa-solid fa-person-circle-check"></i>
+              
               <p>
                 PEMERIKSAAN
-                <i class="fas fa-angle-left right"></i>
+                
                 <span class="badge badge-info right">6</span>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="/periksa" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Top Navigation</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../layout/top-nav-sidebar.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Top Navigation + Sidebar</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../layout/boxed.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Boxed</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../layout/fixed-sidebar.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Fixed Sidebar</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../layout/fixed-sidebar-custom.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Fixed Sidebar <small>+ Custom Area</small></p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../layout/fixed-topnav.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Fixed Navbar</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../layout/fixed-footer.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Fixed Footer</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../layout/collapsed-sidebar.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Collapsed Sidebar</p>
-                </a>
-              </li>
-            </ul>
+            
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">

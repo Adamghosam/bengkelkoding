@@ -237,7 +237,7 @@
       if (alertSuccess) {
         alertSuccess.style.display = 'none';
       }
-    }, 3000); // 3000 ms = 3 detik
+    }, 100); // 3000 ms = 3 detik
   </script>
 
 <script>
