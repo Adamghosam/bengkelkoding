@@ -1,7 +1,7 @@
 
 @extends('layouts.main')
 
-@section('title', 'PERIKSA')
+@section('title', 'Apkes | Periksa')
 
 @section('content')
 

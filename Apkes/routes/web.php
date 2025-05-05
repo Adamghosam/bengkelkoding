@@ -3,15 +3,19 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ObatController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 
-Route::get('/', function () {
+Route::get('/dashboard', function () {
     return view('pages.home');
 });
 
 Route::get('/lists-dokter', function () {
-    return view('pages.list-dokter'); 
+    return view('pages.listdokter'); 
 });
-
+Route::get('/adddokter', function () {
+    return view('pages.add-dokter'); 
+});
 Route::get('/periksa', function () {
     return view('pages.priksa'); 
 });
@@ -30,3 +34,10 @@ Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth');
+
+
+
+// routing dokter
+Route::post('/register-dokter', [AuthController::class, 'registerDokter'])->middleware('auth');
+Route::get('/dokter', [UserController::class, 'indexDokter'])->middleware('auth');
+

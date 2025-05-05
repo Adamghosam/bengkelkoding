@@ -131,11 +131,15 @@
         </a>
       </li>
       <li class="nav-item">
-        
-        <a class="nav-link"  data-slide="true" href="#" role="button">
-          <i class="fas fa-sign-out-alt"></i>
-        </a>
-      </li>
+  <a class="nav-link" href="#" role="button" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+    <i class="fas fa-sign-out-alt"></i>
+  </a>
+</li>
+
+<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+  @csrf
+</form>
+
     </ul>
   </nav>
 <!-- /.navbar -->

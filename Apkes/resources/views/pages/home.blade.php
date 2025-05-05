@@ -2,7 +2,7 @@
 
 @extends('layouts.main')
 
-@section('title', 'Beranda')
+@section('title', 'Apkes | Dashboard')
 
 @section('content')
   

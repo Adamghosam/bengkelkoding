@@ -41,14 +41,30 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="/lists-dokter" class="nav-link">
+            <a href="#" class="nav-link">
               <!-- <i class="nav-icon fas fa-tachometer-alt"></i> -->
               <i class="nav-icon fa-solid fa-user-doctor"></i>
               <p>
                 DOKTER
                 
               </p>
+              <i class="right fas fa-angle-left"></i>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/lists-dokter" class="nav-link">
+                <i class="far fa-solid fa-elevator"></i>                 
+                  <p style="margin-left: 20px;"> Daftar Dokter</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                <i class="far fa-solid fa-person-circle-plus"></i>
+                  <p style="margin-left: 20px;">Tambah Dokter</p>
+                  
+                </a>
+              </li>
+              </ul>
           </li>
           <li class="nav-item">
             <a href="/obat" class="nav-link">

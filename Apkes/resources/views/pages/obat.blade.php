@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Beranda')
+@section('title', 'Apkes | Obat')
 
 @section('content')
 <section class="content-header">
