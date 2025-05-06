@@ -20,6 +20,9 @@ Route::get('/adddokter', function () {
 Route::get('/periksa', function () {
     return view('pages.priksa'); 
 });
+Route::get('/', function () {
+    return view('pages.dashboard'); 
+});
 
 // This route will use the ObatController to show the form
 Route::get('/obat', [ObatController::class, 'create']);

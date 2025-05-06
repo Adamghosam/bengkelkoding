@@ -14,7 +14,7 @@
   </div>
   <!-- /.login-logo -->
   <div class="card">
-    <div class="card-body login-card-body">
+    <div class="card-body login-card-body"  style="border-radius: 90px 90px 0 0">
       <p class="login-box-msg">Sign in to start your session</p>
       @if(session('success'))
     <div style="color: green; font-weight: bold;">
@@ -48,12 +48,7 @@
   </div>
   <div class="row">
     <div class="col-8">
-      <div class="icheck-primary">
-        <input type="checkbox" id="remember">
-        <label for="remember">
-          Remember Me
-        </label>
-      </div>
+      
     </div>
     <!-- /.col -->
     <div class="col-4">
@@ -64,16 +59,7 @@
 </form>
 
 
-      <div class="social-auth-links text-center mb-3">
-        <p>- OR -</p>
-        <a href="#" class="btn btn-block btn-primary">
-          <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-        </a>
-        <a href="#" class="btn btn-block btn-danger">
-          <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
-        </a>
-      </div>
-      <!-- /.social-auth-links -->
+    
 
       <p class="mb-1">
         <a href="forgot-password.html">I forgot my password</a>

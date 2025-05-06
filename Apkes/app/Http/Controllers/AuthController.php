@@ -66,6 +66,14 @@ class AuthController extends Controller
         ])->withInput();
     }
 
+    public function dashboard()
+    {
+        $user = Auth::user(); // Mengambil pengguna yang sedang login
+        $name = $user->nama;  // Mengambil nama pengguna (sesuaikan dengan kolom di database)
+        return view('dashboard', compact('name')); // Mengirim nama ke view
+    }
+    
+
     // Proses logout
     public function logout(Request $request)
     {
