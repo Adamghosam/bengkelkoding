@@ -58,7 +58,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="/adddokter" class="nav-link">
                 <i class="far fa-solid fa-person-circle-plus"></i>
                   <p style="margin-left: 20px;">Tambah Dokter</p>
                   

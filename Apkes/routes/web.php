@@ -10,9 +10,10 @@ Route::get('/dashboard', function () {
     return view('pages.home');
 });
 
-Route::get('/lists-dokter', function () {
-    return view('pages.listdokter'); 
-});
+
+Route::get('/lists-dokter', [UserController::class, 'indexDokter']);
+
+
 Route::get('/adddokter', function () {
     return view('pages.add-dokter'); 
 });
