@@ -69,6 +69,31 @@ public function indexDokter()
 }
 
 
+public function showPeriksaList()
+{
+    
+    // Mengambil jumlah pasien yang sudah diperiksa
+    $sudahDiperiksa = Periksa::where('status', 'sudah diperiksa')
+        ->where('id_dokter', Auth::id()) // hanya milik dokter login
+        ->count();
+
+    // Mengambil jumlah pasien yang belum diperiksa
+    $belumDiperiksa = Periksa::where('status', 'belum diperiksa')
+        ->where('id_dokter', Auth::id()) // hanya milik dokter login
+        ->count();
+
+    // Menghitung total jumlah pasien (sudah dan belum diperiksa)
+    $totalPasien = $sudahDiperiksa + $belumDiperiksa;
+
+    return view('pages.home', compact('sudahDiperiksa', 'belumDiperiksa', 'totalPasien'));
+}
+
+
+
+
+
+
+
 
 
 

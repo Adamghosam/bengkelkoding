@@ -19,11 +19,16 @@ Route::post('/register', [AuthController::class, 'register']);
 
 // Rute yang hanya bisa diakses setelah login
 Route::middleware(['auth'])->group(function () {
+    // Route untuk halaman home dokter
 
-    // Dashboard
-    Route::get('/dashboard', function () {
-        return view('pages.home');
-    });
+    Route::get('/dashboard', [PeriksaController::class, 'showPeriksaList'])->name('dokter.home');
+
+
+
+    // // Dashboard
+    // Route::get('', function () {
+    //     return view('pages.home');
+    // });
 
     // Daftar dokter dan tambah dokter
     Route::get('/lists-dokter', [UserController::class, 'indexDokter']);
