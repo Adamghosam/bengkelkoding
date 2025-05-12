@@ -248,7 +248,19 @@
     });
 </script>
 
+<script>
+    function updateTotal() {
+        var total = 150000;
+        var selectedOptions = document.querySelectorAll('select[name="obat_id[]"] option:checked');
+        
+        selectedOptions.forEach(function(option) {
+            total += parseInt(option.getAttribute('data-price'));
+        });
 
+        // Update the total biaya field
+        document.getElementById('total-biaya').value = 'Rp ' + total.toLocaleString();
+    }
+</script>
 
 <!-- ./ rupiah script -->
 

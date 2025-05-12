@@ -46,6 +46,8 @@
   </div>
 
   <!-- SidebarSearch Form -->
+
+
   <div class="form-inline">
     <div class="input-group" data-widget="sidebar-search">
     <input class="form-control form-control-sidebar" type="search" placeholder="Search"
@@ -60,95 +62,77 @@
   </div>
 
   <!-- Sidebar Menu -->
-  <nav class="mt-2">
-    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-      <!-- Add icons to the links using the .nav-icon class
-           with font-awesome or any other icon font library -->
-      <li class="nav-item">
-        <a href="#" class="nav-link">
-          <!-- <i class="nav-icon fas fa-tachometer-alt"></i> -->
-          <i class="nav-icon fa-solid fa-user-doctor"></i>
-          <p>
-            DOKTER
+<nav class="mt-2">
+  <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+    
+
+    @auth
+      @if(auth()->user()->role === 'dokter')
+
+        <!-- Menu untuk DOKTER -->
+         <li class="nav-item">
+          <a href="/dashboard" class="nav-link">
             
-          </p>
-          <i class="right fas fa-angle-left"></i>
-        </a>
-        <ul class="nav nav-treeview">
-          <li class="nav-item">
-            <a href="/lists-dokter" class="nav-link">
-            <i class="far fa-solid fa-elevator"></i>                 
-              <p style="margin-left: 20px;"> Daftar Dokter</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/adddokter" class="nav-link">
-            <i class="far fa-solid fa-person-circle-plus"></i>
-              <p style="margin-left: 20px;">Tambah Dokter</p>
-              
-            </a>
-          </li>
+            <i class="nav-icon fa-solid fa-gauge"></i>
+            <p>DASHBOARD</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fa-solid fa-user-doctor"></i>
+            <p>DOKTER <i class="right fas fa-angle-left"></i></p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="/lists-dokter" class="nav-link">
+                <i class="far fa-solid fa-elevator"></i>
+                <p style="margin-left: 20px;"> Daftar Dokter</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/adddokter" class="nav-link">
+                <i class="far fa-solid fa-person-circle-plus"></i>
+                <p style="margin-left: 20px;">Tambah Dokter</p>
+              </a>
+            </li>
           </ul>
-      </li>
+        </li>
+
+        <li class="nav-item">
+          <a href="/obat" class="nav-link">
+            <i class="nav-icon fa-solid fa-capsules"></i>
+            <p>OBAT</p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/periksa" class="nav-link">
+            <i class="nav-icon fa-solid fa-person-circle-check"></i>
+            <p>PEMERIKSAAN</p>
+          </a>
+        </li>
+      @elseif(auth()->user()->role === 'pasien')
+
       <li class="nav-item">
-        <a href="/obat" class="nav-link">
-          <!-- <i class="nav-icon fas fa-th"></i> -->
-          <i class="nav-icon fa-solid fa-capsules"></i>
-          <p>
-            OBAT
-          </p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="/periksa" class="nav-link">
-          <!-- <i class="nav-icon fas fa-copy"></i> -->
-          <i class="nav-icon fa-solid fa-person-circle-check"></i>
-          
-          <p>
-            PEMERIKSAAN
+          <a href="/dashboard" class="nav-link">
             
-            <span class="badge badge-info right">6</span>
-          </p>
-        </a>
-        
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link">
-          <i class="nav-icon fas fa-chart-pie"></i>
-          <p>
-            Charts
-            <i class="right fas fa-angle-left"></i>
-          </p>
-        </a>
-        <ul class="nav nav-treeview">
-          <li class="nav-item">
-            <a href="../charts/chartjs.html" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>ChartJS</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="../charts/flot.html" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Flot</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="../charts/inline.html" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Inline</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="../charts/uplot.html" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>uPlot</p>
-            </a>
-          </li>
-        </ul>
-      </li>          
-    </ul>
-  </nav>
+            <i class="nav-icon fa-solid fa-gauge"></i>
+            <p>DASHBOARD</p>
+          </a>
+        </li>
+        <!-- Menu untuk PASIEN -->
+        <li class="nav-item">
+          <a href="/periksa-pasien" class="nav-link">
+            <i class="nav-icon fa-solid fa-person-circle-check"></i>
+            <p>PEMERIKSAAN</p>
+          </a>
+        </li>
+      @endif
+    @endauth
+
+  </ul>
+</nav>
+
   <!-- /.sidebar-menu -->
 </div>
 <!-- /.sidebar -->

@@ -16,14 +16,20 @@
   <div class="card">
     <div class="card-body login-card-body"  style="border-radius: 90px 90px 0 0">
       <p class="login-box-msg">Sign in to start your session</p>
-      @if(session('success'))
-    <div style="color: green; font-weight: bold;">
-        {{ session('success') }}
-    </div>
-@endif
+    @if(session('success'))
+              <div class="alert alert-success">
+                {{ session('success') }}
+              </div>
+            @endif
+
+
+    
 
 @if($errors->any())
-    <div style="color: red">{{ $errors->first() }}</div>
+
+<div class="alert alert-danger">
+                {{ $errors->first() }}
+              </div>
 @endif
 
 

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->dateTime('tgl_periksa');
             $table->text('catatan');
             $table->integer('biaya_periksa');
+            $table->string('status')->default('belum diperiksa'); // Kolom status ditambahkan dengan default 'belum diperiksa'
             $table->timestamps();
 
             $table->foreign('id_pasien')->references('id')->on('users')->onDelete('cascade');

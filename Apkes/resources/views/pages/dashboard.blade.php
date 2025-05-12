@@ -7,7 +7,7 @@
 		<meta http-equiv="pragma" content="no-cache">
 		<meta name="robots" content="all">
 
-		<title> "APKES"</title>
+		<title> APKES</title>
 		<link rel="shortcut icon" href="{{ asset('lanpagesassets/images/favicon.png')}}" type="image/png">
 		<!-- Bootstrap -->
 		<link href="{{ asset('lanpages/assets/css/bootstrap.min.css')}}" rel="stylesheet"  />
@@ -53,19 +53,23 @@
 		
 		<!-- Navbar Start -->
 		<header id="topnav" class="defaultscroll sticky">
-			<div class="container">
-				<!-- Logo container-->
-				<div>
-					<a class="logo" href="#">
-						<img src="{{ asset('lanpages/assets/images/re-cloud/re-cloud_white.png')}}" class="l-light" alt="re-cloud" height="30">
-						<img src="{{ asset('lanpages/assets/images/re-cloud/re-cloud.png')}}" class="l-dark" alt="re-cloud" height="30">
-					</a>
-				</div>
-				<div class="buy-button logo d-none d-md-block">
-					<a href="/login" class="btn btn-light l-light">LOGIN / REGISTER</a>
-					<a href="/login" class="btn btn-primary l-dark">LOGIN / REGISTER</a>
-				</div>
-				<!-- End Logo container-->
+			<div class="container"><!-- Logo container -->
+<div class="d-flex align-items-center justify-content-between">
+	<!-- Logo -->
+	<div>
+		<a class="logo" href="#">
+			<img src="{{ asset('lanpages/assets/images/kemenkes.png') }}" class="l-light" alt="kemenkes" style="width: 170px; height: auto;">
+			<img src="{{ asset('lanpages/assets/images/kemenkes.png') }}" class="l-dark" alt="kemenkes" style="width: 170px; height: auto;">
+		</a>
+	</div>
+
+	<!-- Tombol Login/Register -->
+	<div class="buy-button logo d-none d-md-block">
+		<a href="/login" class="btn btn-light l-light">LOGIN / REGISTER</a>
+		<a href="/login" class="btn btn-primary l-dark">LOGIN / REGISTER</a>
+	</div>
+</div>
+
 				<div class="menu-extras">
 					<div class="menu-item">
 						<!-- Mobile menu toggle-->
@@ -101,7 +105,7 @@
 						<h1 class="text-center heading mb-3 text-white text-shadow mt-100">SELAMAT DATANG DI APLIKASI KESEHATAN MASYARAKAT INDONESIA</h1>
 						<h3 class="text-center text-white text-shadow mb-100">Terimakasih telah berpartisipasi dan berkembang bersama AP-KES Indonesia 2025. <br> Anda Sehat Kami Pun Sehat</h3>
 						<div class="text-center mb-100">
-							<a class="btn btn-primary btn-lg animate__animated animate__pulse animate__infinite" onclick="toLeaderBoard()">LIHAT LEADERBOARD</a>
+							
 						</div>
 					</div>
 				</div>
@@ -121,11 +125,12 @@
 						</div>
 						<div class="col-12 d-flex align-items-center justify-content-center">
 								<a class="d-block p-4" href="#" target="_blank" rel="noopener noreferrer">
-									<img class="img-fluid" src="{{ asset('lanpages/assets/images/alibaba-cloud-small.png')}}" alt="alibaba-cloud-small.png">
-								</a>
-								<a class="d-block p-4" href="https://www.codepolitan.com/" target="_blank" rel="noopener noreferrer">
-									<img class="img-fluid" src="{{ asset('lanpages/assets/images/codepolitan_logo-small.png')}}" alt="codepolitan_logo-small.png">
-								</a>
+  <img class="img-fluid" src="{{ asset('lanpages/assets/images/kemenkes.png') }}" alt="kemenkes.png" style="width: 200px; height: 200px; object-fit: contain;">
+</a>
+<a class="d-block p-4" href="#" target="_blank" rel="noopener noreferrer">
+  <img class="img-fluid" src="{{ asset('lanpages/assets/images/Bpjss.png') }}" alt="Bpjss.png" style="width: 200px; height: 200x; object-fit: contain;">
+</a>
+
 						</div>
 					</div>
 				</div><!--end container-->
