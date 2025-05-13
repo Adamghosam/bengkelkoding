@@ -293,6 +293,21 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('[data-status]').forEach(function (el) {
+            const status = el.getAttribute('data-status');
+
+            if (status === 'sudah diperiksa') {
+                el.classList.add('badge-primary'); // hijau
+            } else if (status === 'belum diperiksa') {
+                el.classList.add('badge-info'); // abu-abu
+            } else {
+                el.classList.add('badge-light'); // fallback
+            }
+        });
+    });
+</script>
 
 <!-- ./ rupiah script -->
 
