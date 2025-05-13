@@ -32,20 +32,14 @@
             <i class="fas fa-times"></i>
           </button>
         </div>
-<!-- Alert Success -->
-@if(session('success'))
-        <div class="alert alert-success" role="alert">      
-          {{ session('success') }}
-        </div>
-@endif
-      <!--  -->
+
 
 
       </div>
 
 
       <form action="{{ route('obat.store') }}" method="POST" id="obatForm">
-      
+
         @csrf
         <div class="card-body">
           <div class="row">
@@ -56,21 +50,21 @@
               </div>
 
               <div class="form-group">
-    <label>Kemasan</label>
-    <select name="kemasan" class="form-control select2bs4" style="width: 100%;"> <!-- Pastikan ada atribut name -->
-        <option value="" selected disabled>Pilih Kemasan</option> <!-- Placeholder jika belum dipilih -->
-        @foreach($jeniskemasan as $k)
-            <option value="{{ $k }}">{{ $k }}</option>
-        @endforeach
-    </select>
-</div>
+                <label>Kemasan</label>
+                <select name="kemasan" class="form-control select2bs4" style="width: 100%;"> <!-- Pastikan ada atribut name -->
+                  <option value="" selected disabled>Pilih Kemasan</option> <!-- Placeholder jika belum dipilih -->
+                  @foreach($jeniskemasan as $k)
+                  <option value="{{ $k }}">{{ $k }}</option>
+                  @endforeach
+                </select>
+              </div>
 
             </div>
 
             <div class="col-md-6">
               <div class="form-group">
                 <label>Harga</label>
-                <input type="text" name="harga"  id="harga" class="form-control" placeholder="Masukkan harga" required autocomplete="off">
+                <input type="text" name="harga" id="harga" class="form-control" placeholder="Masukkan harga" required autocomplete="off">
               </div>
             </div>
           </div>
@@ -84,58 +78,73 @@
 
 
 
-        <div class="row">
-          <div class="col-12">
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title font-weight-bold">Daftar List Obat</h3>
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title font-weight-bold">Daftar List Obat</h3>
 
-                <div class="card-tools">
-                  <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+            <div class="card-tools">
+              <div class="input-group input-group-sm" style="width: 150px;">
+                <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
 
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default">
-                        <i class="fas fa-search"></i>
-                      </button>
-                    </div>
-                  </div>
+                <div class="input-group-append">
+                  <button type="submit" class="btn btn-default">
+                    <i class="fas fa-search"></i>
+                  </button>
                 </div>
               </div>
-              <!-- /.card-header -->
-              <div class="card-body table-responsive p-0">
-                <table class="table table-hover text-nowrap">
-                  <thead>
-                    <tr>
-                      <th>NO</th>
-                      <th>Nama</th>
-                      <th>Kemasan</th>
-                      <th>Harga</th>
-                      <th>Reason</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  @foreach($obats as $obat)
-             
-                    <tr>
-                      <td>{{ $loop->iteration }}</td>
-                      <td>{{ $obat->nama_obat }}</td>
-                      <td>{{ $obat->kemasan }}</td>
-                      <td>{{ 'Rp. ' . number_format($obat->harga, 0, ',', '.') }}</td>
-                      <td>{{ $obat->created_at }}</td>    
-                    </tr>
-                    @endforeach
-                  </tbody>
-                </table>
-              </div>
-    
+            </div>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body table-responsive p-0">
+            <table class="table table-hover text-nowrap">
+              <thead>
+                <tr>
+                  <th>NO</th>
+                  <th>Nama</th>
+                  <th>Kemasan</th>
+                  <th>Harga</th>
+                  <th>Reason</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach($obats as $obat)
+
+                <tr>
+                  <td>{{ $loop->iteration }}</td>
+                  <td>{{ $obat->nama_obat }}</td>
+                  <td>{{ $obat->kemasan }}</td>
+                  <td>{{ 'Rp. ' . number_format($obat->harga, 0, ',', '.') }}</td>
+                  <td>{{ $obat->created_at }}</td>
+                  <td>
+                    <a href="{{ route('obat.edit', $obat->id) }}" class="btn btn-sm btn-warning">
+                      <i class="fas fa-edit"></i>
+                    </a>
+                    <form action="{{ route('obat.destroy', $obat->id) }}" method="POST" class="d-inline delete-form">
+                      @csrf
+                      @method('DELETE')
+                      <button type="button" class="btn btn-sm btn-danger delete-btn">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </form>
+
+                  </td>
+
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
+          </div>
+
         </div>
         <!-- /.row -->
       </div>
       <!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
-
+</section>
+<!-- /.content -->
+@include('layouts.alert-success')
 
 
 @endsection

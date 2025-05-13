@@ -52,7 +52,7 @@
                 <tr>
                     <td>{{ $psk->pasien->nama }}</td>
                     <td>{{ $psk->tgl_periksa }}</td>
-                    <td>{{ $psk->status }}</td>
+                    <td><span class="badge badge-primary">{{ $psk->status }}</span></td>
                     <td>
                         @if ($psk->status == 'belum diperiksa')
                             <a href="{{ route('dokter.periksa.edit', $psk->id) }}" class="btn btn-sm btn-primary">Periksa</a>

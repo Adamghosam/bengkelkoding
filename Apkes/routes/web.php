@@ -11,6 +11,9 @@ Route::get('/', function () {
     return view('pages.dashboard'); 
 });
 
+// Route::get('/', [PeriksaController::class, 'showPeriksa'])->name('dokter.main');
+
+
 // Login dan Register
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
@@ -20,8 +23,10 @@ Route::post('/register', [AuthController::class, 'register']);
 // Rute yang hanya bisa diakses setelah login
 Route::middleware(['auth'])->group(function () {
     // Route untuk halaman home dokter
+   
 
     Route::get('/dashboard', [PeriksaController::class, 'showPeriksaList'])->name('dokter.home');
+    
 
 
 
@@ -50,6 +55,19 @@ Route::middleware(['auth'])->group(function () {
     // Obat
     Route::get('/obat', [ObatController::class, 'create']);
     Route::post('/obat', [ObatController::class, 'store'])->name('obat.store');
+    // Obat
+
+        // // Menampilkan form edit
+    Route::get('/obat', [ObatController::class, 'create'])->name('obat.index');
+
+    Route::get('/obat/{id}/edit', [ObatController::class, 'edit'])->name('obat.edit');
+
+    // Menyimpan hasil edit (update data)
+    Route::put('/obat/{id}', [ObatController::class, 'update'])->name('obat.update');
+
+    // Menghapus data obat
+    Route::delete('/obat/{id}', [ObatController::class, 'destroy'])->name('obat.destroy');
+
 
     // Logout
     Route::post('/logout', [AuthController::class, 'logout']);

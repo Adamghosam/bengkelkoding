@@ -96,8 +96,6 @@ public function showPeriksaList()
 
 
 
-
-
     // Menampilkan form update pemeriksaan
     public function edit($id)
     {

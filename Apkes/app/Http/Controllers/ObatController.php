@@ -42,5 +42,53 @@ class ObatController extends Controller
     
         return redirect()->back()->with('success', 'Data obat berhasil disimpan!');
     }
+public function edit($id)
+{
+    $obat = Obat::findOrFail($id);
+    $jeniskemasan = [
+        'Blister', 'Strip', 'Botol', 'Tube', 'Ampul', 'Vial', 'Sachet', 'Dus'
+    ];
+    return view('pages.edit-obat', compact('obat', 'jeniskemasan')); // Mengarah ke pages.edit-obat
+}
+
+
+public function update(Request $request, $id)
+{
+    // Validasi input
+    $request->validate([
+        'nama_obat' => 'required',
+        'kemasan' => 'required',
+        'harga' => 'required|numeric',
+    ]);
+
+    // Ambil data obat yang akan diperbarui
+    $obat = Obat::findOrFail($id);
+    $obat->update([
+        'nama_obat' => $request->nama_obat,
+        'kemasan' => $request->kemasan,
+        'harga' => $request->harga,
+    ]);
+
+    // Setelah update, arahkan kembali ke halaman daftar obat
+    return redirect()->route('obat.index')->with('success', 'Data obat berhasil diperbarui!');
+}
+
+
+public function destroy($id)
+{
+    $obat = Obat::findOrFail($id);
+    $obat->delete();
+
+    return redirect('/obat')->with('success', 'Data obat berhasil dihapus!');
+}
+
+public function index()
+{
+    $obats = Obat::all(); // Mengambil semua data obat dari database
+    return view('pages.obat', compact('obats')); // Mengirim data obat ke view
+}
+
+
+   
     
 }

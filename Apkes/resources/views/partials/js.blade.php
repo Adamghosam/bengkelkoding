@@ -27,9 +27,14 @@
 
 <!-- ChartJS -->
 <script src="{{ asset('adminlte/plugins/chart.js/Chart.min.js')}}"></script>
+<!-- sweetalert -->
+<script src="{{ asset('adminlte/dist/js/sweetalert.js')}}"></script>
 
 <!-- Sparkline -->
 <script src="{{ asset('adminlte/plugins/sparklines/sparkline.js')}}"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 <!-- JQVMap -->
 <script src="{{ asset('adminlte/plugins/jqvmap/jquery.vmap.min.js')}}"></script>
@@ -261,6 +266,33 @@
         document.getElementById('total-biaya').value = 'Rp ' + total.toLocaleString();
     }
 </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const deleteButtons = document.querySelectorAll('.delete-btn');
+    
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const form = this.closest('.delete-form');
+            Swal.fire({
+                title: 'Yakin ingin menghapus?',
+                text: "Data yang dihapus tidak bisa dikembalikan!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#6c757d',
+                confirmButtonText: 'Ya, hapus!',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    form.submit();
+                }
+            });
+        });
+    });
+});
+</script>
+
 
 <!-- ./ rupiah script -->
 

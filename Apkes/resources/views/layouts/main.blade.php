@@ -86,7 +86,7 @@
             <li class="nav-item">
               <a href="/lists-dokter" class="nav-link">
                 <i class="far fa-solid fa-elevator"></i>
-                <p style="margin-left: 20px;"> Daftar Dokter</p>
+                <p style="margin-left: 20px;">List Dokter</p>
               </a>
             </li>
             <li class="nav-item">
@@ -108,7 +108,7 @@
         <li class="nav-item">
           <a href="/periksa" class="nav-link">
             <i class="nav-icon fa-solid fa-person-circle-check"></i>
-            <p>PEMERIKSAAN</p>
+            <p>PEMERIKSAAN</span></p>
           </a>
         </li>
       @elseif(auth()->user()->role === 'pasien')
