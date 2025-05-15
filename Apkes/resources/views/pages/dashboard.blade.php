@@ -143,39 +143,8 @@
 			<div class="before"></div>
 			<div class="after"></div>
 			<div class="container mt-100">
-				<div class="row align-items-center">
-					<div class="col-12 col-lg-6 offset-lg-3 mb-3">
-						<div class="title-heading mt-4 text-center">
-							<h1 class="heading mb-3 text-primary text-shadow">Selamat Bagi Pemenang <br> Re-Cloud Challenges Indonesia</h1>
-						</div>
-					</div><!--end col-->
-				</div><!--end row-->
-				<div class="row d-none d-lg-flex">
-					<div class="col-md-4">
-						<div class="text-center mb-3">
-							<img src="{{ asset('lanpages/assets/images/re-cloud/1.png')}}" alt="first winner icon">
-						</div>
-						<div class="bg-primary p-2 rounded shadow mb-3" data-websheet="data-first-winner">
-							<div data-websheet-render="winner-template"></div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="text-center mb-3">
-							<img src="{{ asset('lanpages/assets/images/re-cloud/2.png')}}" alt="second winner icon">
-						</div>
-						<div class="bg-primary p-2 rounded shadow mb-3" data-websheet="data-second-winner">
-							<div data-websheet-render="winner-template"></div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="text-center mb-3">
-							<img src="{{ asset('lanpages/assets/images/re-cloud/3.png')}}" alt="second winner icon">
-						</div>
-						<div class="bg-primary p-2 rounded shadow mb-3" data-websheet="data-third-winner">
-							<div data-websheet-render="winner-template"></div>
-						</div>
-					</div>
-				</div>
+				
+				
 				<div class="row d-lg-none">
 					<div class="col-md-12 text-center">
 						<div class="text-center">
@@ -195,7 +164,7 @@
 			<div class="container my-4">
 				<div class="row">
 					<div class="col-12">
-                        <h2 class="section-title text-center">Kriteria Penjurian</h2>
+                        <h2 class="section-title text-center">Daftar Poli</h2>
             </div>
         </div>
         <div class="row">
@@ -203,11 +172,11 @@
             <div class="col-md-6 col-lg-4 mb-3">
                 <div class="card border-0 shadow" style="border-radius:20px; height:100%;">
                     <div class="card-header text-center text-white" style="border-radius: 20px 20px 0 0; background-color: #E5640C;">
-                        <h5 class="m-0">Fungsionalitas</h5>
+                        <h5 class="m-0">Poli Umum</h5>
                     </div>
                     <div class="card-body text-muted">
                         <ul>
-                            <li>Seberapa besar solusi yang dihadirkan untuk kategori industri yang dipilih? Apakah solusi yang dihadirkan pada website dapat digunakan oleh banyak orang?</li>
+                            <li>Poli umum merupakan salah satu dari jenis layanan di Puskesmas yang memberikan pelayanan kedokteran berupa pemeriksaan kesehatan, pengobatan dan penyuluhan kepada pasien atau masyarakat, serta meningkatkan pengetahuan dan kesadaran masyarakat dalam bidang kesehatan.</li>
                         </ul>
                     </div>
                 </div>
@@ -217,11 +186,11 @@
             <div class="col-md-6 col-lg-4 mb-3">
                 <div class="card border-0 shadow" style="border-radius:20px; height:100%;">
                     <div class="card-header text-center text-white" style="border-radius: 20px 20px 0 0; background-color: #E5640C;">
-                        <h5 class="m-0">Inovasi</h5>
+                        <h5 class="m-0">Poli Gigi</h5>
                     </div>
                     <div class="card-body text-muted">
                         <ul>
-                            <li>Apakah solusi yang dihadirkan memiliki keunikan atau pendekatan baru dalam menyelesaikan masalah?</li>
+                            <li>Poli Gigi memiliki tujuan untuk memberi pelayanan kesehatan mulut dan gigi. Jadi, kamu bisa datang ke poli gigi saat membutuhkan layanan kesehatan seputar gigi dan mulut.</li>
                         </ul>
                     </div>
                 </div>
@@ -231,11 +200,12 @@
             <div class="col-md-6 col-lg-4 mb-3">
                 <div class="card border-0 shadow" style="border-radius:20px; height:100%;">
                     <div class="card-header text-center text-white" style="border-radius: 20px 20px 0 0; background-color: #E5640C;">
-                        <h5 class="m-0">Desain & UX</h5>
+                        <h5 class="m-0">Poli THT</h5>
                     </div>
                     <div class="card-body text-muted">
                         <ul>
-                            <li>Apakah tampilan dan pengalaman pengguna pada website nyaman dan mudah digunakan?</li>
+                            <li>Poli THT-KL (Telinga, Hidung, Tenggorokan – Kepala dan Leher) adalah poliklinik yang menyediakan layanan kesehatan untuk pasien yang mengalami gangguan pada organ-organ THT-KL, yaitu telinga, hidung, tenggorokan, kepala, dan leher.</li>
+                           
                         </ul>
                     </div>
                 </div>
@@ -282,11 +252,11 @@
 							</ul>
 							</div><!--end col-->
 							<div class="col-lg-6 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
-								<a class="logo-footer" href="https://re-cloud.id">
-									<img src="{{ asset('lanpages/assets/images/re-cloud/re-cloud.png')}}" alt="re-cloud" height="30">
+								<a class="logo-footer" href="#">
+									<img src="{{ asset('lanpages/assets/images/kemenkes.png') }}" class="l-light" alt="kemenkes" style="width: 170px; height: auto;">
 								</a>
 								<p class="mt-4">
-									<strong>Re-Cloud Challenge Indonesia</strong> adalah challenges pertama dari <a href="https://int.alibabacloud.com/m/1000229842/" target="_blank" rel="noopener noreferrer" class="text-primary">AlibabaCloud di Indonesia</a> dengan misi edukasi masyarakat agar terbiasa menggunakan Layanan Awan (Cloud Service) dan juga sertifikasi yang disediakan.
+									<strong>Apkes </strong> adalah aplikasi kesehatan  pertama dari <a href="#"" target="_blank" rel="noopener noreferrer" class="text-primary">Apkes di Indonesia</a> dengan misi memudahkan  masyarakat agar terbiasa menggunakan Layanan kesehatan (Apkes service) dan juga teknologi  yang disediakan.
 								</p>
 							</div><!--end col-->
 					</div><!--end row-->
